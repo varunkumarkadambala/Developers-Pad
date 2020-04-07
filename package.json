@@ -1,7 +1,7 @@
 {
   "name": "devconnector",
   "version": "1.0.0",
-  "description": "A MERN Stact Social Network",
+  "description": "A MERN Stack Social Network",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
