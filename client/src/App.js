@@ -1,4 +1,4 @@
-import React,{ Fragment} from 'react';
+import React,{ Fragment, useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 //Import Components
@@ -12,8 +12,21 @@ import './App.css';
 //Import Redux
 import {Provider} from 'react-redux';
 import store from './store';
+import setAuthToken from "./utils/setAuthToken";
+import {loadUser} from "./actions/auth";
 
-const App = () => (
+// Check if token is already present
+if(localStorage.token){
+    setAuthToken(localStorage.token);
+}
+
+const App = () => {
+
+    useEffect(() => {
+       store.dispatch(loadUser())
+    }, []);
+
+    return (
     <Provider store={store}>
         <Router>
             <Fragment>
@@ -26,6 +39,10 @@ const App = () => (
                         <Route exact path="/register" component={Register}/>
                     </Switch>
                 </section>
+                <div className="footer">
+                    <p>This is a project in construction as an attempt to learn MERN Stack</p>
+                    <p>&copy; Created by <a href="https://varunkumarkadambala.github.io" target="_blank" rel="noopener noreferrer">Varun Kumar Kadambala </a></p>
+                </div>
                 {/*<footer>*/}
                 {/*    <p>*/}
                 {/*        **This is a project in construction as an attempt to learn MERN Stack*/}
@@ -38,6 +55,6 @@ const App = () => (
             </Fragment>
         </Router>
     </Provider>
-);
+)};
 
 export default App;

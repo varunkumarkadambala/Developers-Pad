@@ -21,8 +21,10 @@ body {
   color: #333;
 }
 
+
+
 a {
-  color: var(--primary-color);
+  color: var(--dark-color);
   text-decoration: none;
 }
 
@@ -42,6 +44,16 @@ img {
   padding: 0 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
 }
 
 /* Text Styles*/
@@ -574,4 +586,6 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+
+
 }
