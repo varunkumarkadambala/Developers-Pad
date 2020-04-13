@@ -7,6 +7,9 @@ import Landing from "./components/skeleton/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Alert from "./components/skeleton/Alert";
+import Dashboard from "./components/dashboard/Dashboard";
+import Footer from "./components/skeleton/Footer";
+import PrivateRoute from "./components/routing/PrivateRoute";
 import './App.css';
 
 //Import Redux
@@ -37,21 +40,10 @@ const App = () => {
                     <Switch>
                         <Route exact path="/login" component={Login}/>
                         <Route exact path="/register" component={Register}/>
+                        <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                     </Switch>
                 </section>
-                <div className="footer">
-                    <p>This is a project in construction as an attempt to learn MERN Stack</p>
-                    <p>&copy; Created by <a href="https://varunkumarkadambala.github.io" target="_blank" rel="noopener noreferrer">Varun Kumar Kadambala </a></p>
-                </div>
-                {/*<footer>*/}
-                {/*    <p>*/}
-                {/*        **This is a project in construction as an attempt to learn MERN Stack*/}
-                {/*    </p>*/}
-                {/*    <p>*/}
-                {/*        &copy; Created for*/}
-                {/*        <a href="https://varunkumarkadambala.github.io" >Varun Kumar Kadambala </a>*/}
-                {/*    </p>*/}
-                {/*</footer>*/}
+                <Footer/>
             </Fragment>
         </Router>
     </Provider>
