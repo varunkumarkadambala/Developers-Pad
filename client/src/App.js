@@ -24,6 +24,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 import setAuthToken from "./utils/setAuthToken";
 import {loadUser} from "./actions/auth";
+import Post from "./components/post/Post";
 
 
 // Check if token is already present
@@ -52,6 +53,7 @@ const App = () => {
                         <Route exact path='/profile/:id' component={Profile} />
                         <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                         <PrivateRoute exact path='/posts' component={Posts} />
+                        <PrivateRoute exact path='/post/:id' component={Post} />
                         <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
                         <PrivateRoute exact path='/edit-profile' component={EditProfile}/>
                         <PrivateRoute exact path='/add-experience' component={AddExperience}/>
