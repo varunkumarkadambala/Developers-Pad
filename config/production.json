@@ -1,0 +1,6 @@
+{
+  "mongoURI":"mongodb+srv://admin:admin123@devconnector-ly0ke.mongodb.net/dpad?retryWrites=true&w=majority",
+  "jwtSecret": "devLookSecret",
+  "githubClientId": "4500832ac6b517672ba9",
+  "githubSecret": "97f45031078793a2fd2abd48501ad6f0f8413d34"
+}

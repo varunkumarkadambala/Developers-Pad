@@ -17,7 +17,10 @@ const Dashboard = ({getCurrentProfile, deleteAccount, auth : {user}, profile: {p
     return loading && profile === null ? <Spinner/> : <Fragment>
         <h1 className="large text-primary"> Dashboard </h1>
         <p className="lead">
-            <i className="fas fa-user"/> Hello { user && user.name}!!!
+            <Link to={`/profile/${user._id}`} >
+                <i className="fas fa-user"/>
+            </Link> Hello { user && user.name} !!!
+
         </p>
         {profile !== null ?(
             <Fragment>
