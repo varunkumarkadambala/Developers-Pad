@@ -16,6 +16,7 @@ import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Footer from "./components/skeleton/Footer";
 import PrivateRoute from "./components/routing/PrivateRoute";
+import Posts from "./components/posts/Posts";
 import './App.css';
 
 //Import Redux
@@ -23,6 +24,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 import setAuthToken from "./utils/setAuthToken";
 import {loadUser} from "./actions/auth";
+
 
 // Check if token is already present
 if(localStorage.token){
@@ -49,6 +51,7 @@ const App = () => {
                         <Route exact path='/profiles' component={Profiles} />
                         <Route exact path='/profile/:id' component={Profile} />
                         <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+                        <PrivateRoute exact path='/posts' component={Posts} />
                         <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
                         <PrivateRoute exact path='/edit-profile' component={EditProfile}/>
                         <PrivateRoute exact path='/add-experience' component={AddExperience}/>
